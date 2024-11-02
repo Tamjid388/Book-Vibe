@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar"
 
  function Root() {
   return (
-    <div>
+    <div className="container mx-auto">
         <Navbar></Navbar>
         <Outlet></Outlet>
         <Footer></Footer>
