@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
+import { addToStoredReadList } from '../../Utilities/AddTOdb'
 
 export default function BookDetail() {
     const {bookId}=useParams()
@@ -11,8 +12,8 @@ const bookfind=data.find(book=>book.bookId===id)
 const {bookId:currentbookID,bookName,image,author,rating,
   review,tags,category}
 =bookfind
-const handleMarkAsRead=()=>{
-
+const handleMarkAsRead=(id)=>{
+addToStoredReadList(id)
 }
 
   return (
@@ -35,7 +36,7 @@ const handleMarkAsRead=()=>{
           <span className='text-xl font-bold'>Review: </span> 
           {review}</h2>
           <div className='space-x-3'>
-            <button onClick={handleMarkAsRead}
+            <button onClick={()=>handleMarkAsRead(bookId)}
             className="btn px-8 btn-outline btn-info">
               
               Read</button>
