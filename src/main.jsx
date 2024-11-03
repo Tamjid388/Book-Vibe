@@ -33,7 +33,8 @@ loader:()=>fetch("/data/booksData.json")
   {
 
     path:"ListedBooks",
-    element:<ListedBook></ListedBook>
+    element:<ListedBook></ListedBook>,
+     loader:()=>fetch("/data/booksData.json") //Loading Full data for individual book is not agood practice
   },
   {
     path:"Dashboard",
